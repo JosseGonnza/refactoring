@@ -1,7 +1,14 @@
 import {CharcoalKiln} from './charcoal-kiln'
 import {Material} from './material'
 
-export class Furnace extends CharcoalKiln{
+export class Furnace {
+
+  ingredients: Material[] = []
+
+  addIngredients(ingredients: Material[]) {
+    this.ingredients = ingredients
+  }
+
   createCoal() {
     throw new Error('Cannot create coal in furnace')
   }
