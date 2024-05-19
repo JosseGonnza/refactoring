@@ -9,11 +9,7 @@ export class FarmStorage {
   seedChest: Chest = new Chest()
   foodChest: Chest = new Chest()
 
-  keep(items: Item[]) {
-    this.addToChest(items)
-  }
-
-  private addToChest(items: Item[]) {
+  public addToChest(items: Item[]) {
     items.forEach((item: Item) => {
       if (item instanceof Material) {
         this.materialChest.store(item)
