@@ -45,6 +45,11 @@ export class Farmer {
     tool.improveToCooper(cooperBars, woods)
   }
 
+
+
+
+  
+
   improveToolToSteel(tool: Tool, woods: Material, ironOres: Material[], coals: Material) {
     const ironBars: Material = new Material('iron bar', 0)
     ironOres.forEach((ironOre: Material) => {
