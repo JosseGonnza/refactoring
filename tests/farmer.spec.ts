@@ -56,17 +56,10 @@ describe('Farmer', () => {
   describe('improve tool', () => {
     it('should improve the tool to cooper', () => {
       const axe = new Axe()
-      const cooperOres: Material[] = [
-        new Material('cooper ore', 5),
-        new Material('cooper ore', 5),
-        new Material('cooper ore', 5),
-        new Material('cooper ore', 5),
-        new Material('cooper ore', 5)
-      ]
-      const coals = new Material('coal', 5)
+      const cooperBars = new Material('cooper bar', 5)
       const woods = new Material('wood', 5)
       const farmer = new Farmer()
-      farmer.improveToolToCooper(axe, woods, cooperOres, coals)
+      farmer.improveToolToCooper(axe, woods, cooperBars)
       expect(axe.material).toBe('cooper')
     })
 

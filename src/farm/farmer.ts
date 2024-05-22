@@ -33,22 +33,15 @@ export class Farmer {
     return this.charcoalKiln.createCoal()
   }
 
-  improveToolToCooper(tool: Tool, woods: Material, cooperOres: Material[], coals: Material) {
-    const cooperBars: Material = new Material('cooper bar', 0)
-    cooperOres.forEach((cooperOre: Material) => {
-      while(coals.quantity > 0){
-        this.furnace.addIngredients([cooperOre, new Material('coal',1)])
-        coals.quantity--
-        cooperBars.quantity++
-      }
-    })
+  createCooperBarsFromCooperAndCoal(coopers: Material, coal: Material) {
+    this.furnace.addIngredients([coopers, coal])
+    return this.furnace.createCooperBar()
+  } 
+
+  improveToolToCooper(tool: Tool, woods: Material, cooperBars: Material) {
     tool.improveToCooper(cooperBars, woods)
-  }
+  }  
 
-
-
-
-  
 
   improveToolToSteel(tool: Tool, woods: Material, ironOres: Material[], coals: Material) {
     const ironBars: Material = new Material('iron bar', 0)
