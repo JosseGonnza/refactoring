@@ -8,6 +8,7 @@ export class Chest {
       this.capacity = capacity
   }
 
+  //Investigar lso dos últimos Code Smells
   store (item: Item) {
     this.itemToStore = item
     // @ts-ignore
@@ -18,6 +19,7 @@ export class Chest {
       return
     }
 
+    //Posible temporal field
     storedItems.forEach((storedItem: Item) => {
       if(storedItem.quantity < 5) {
         // @ts-ignore
